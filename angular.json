@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "datamovesme-sqlcourse": {
+    "query-browser": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/datamovesme-sqlcourse",
+            "outputPath": "dist/query-browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -48,7 +48,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -67,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "datamovesme-sqlcourse:build"
+            "browserTarget": "query-browser:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "datamovesme-sqlcourse:build:production"
+              "browserTarget": "query-browser:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "datamovesme-sqlcourse:build"
+            "browserTarget": "query-browser:build"
           }
         },
         "lint": {
@@ -91,9 +90,15 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://pkehrer.github.io/query-browser/"
+          }
         }
       }
     }
   },
-  "defaultProject": "datamovesme-sqlcourse"
+  "defaultProject": "query-browser"
 }
