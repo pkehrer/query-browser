@@ -13,9 +13,7 @@
     "copy-db-src": "ncp sql/sqlcourse.db.zip src/assets/sqlcourse.db.zip && ncp sql/sqlcourse.db src/assets/sqlcourse.db",
     "copy-db": "run-p copy-db-dist copy-db-src",
     "db": "run-s make-db make-asset-dir zip-db copy-db",
-    "gh-build": "ng build --prod --base-href https://pkehrer.github.io/query-browser/",
-    "gh-deploy": "angular-cli-ghpages -S --dir=dist/query-browser",
-    "deploy": "run-s gh-build db gh-deploy"
+    "deploy": "ng deploy"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +42,7 @@
     "@angular/cli": "~11.2.3",
     "@angular/compiler-cli": "~11.2.4",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.1",
     "bestzip": "^2.1.7",
     "codelyzer": "^6.0.0",
     "csvtojson": "^2.0.10",
