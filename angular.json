@@ -59,7 +59,8 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "baseHref": "https://pkehrer.github.io/query-browser/"
             }
           }
         },
