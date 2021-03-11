@@ -3,9 +3,11 @@
     <ng-template ngbTabTitle>
       <span class="edit-button" (click)="editTitle(d, modalContent)" *ngIf="activeTabId === d.title">&#9998;</span>
       {{d.title}}
-      <span class="close-button" (click)="closeTab(d, $event)">x</span></ng-template>
+      <span class="close-button" (click)="closeTab(d, $event)">x</span>
+    </ng-template>
     <ng-template ngbTabContent>
-      <ngx-codemirror [ngModel]="d.text" (ngModelChange)="textChange(d, $event)" [options]="codemirrorOptions"></ngx-codemirror>
+      <ngx-codemirror [ngModel]="d.text" (ngModelChange)="textChange(d, $event)" [options]="codemirrorOptions">
+      </ngx-codemirror>
     </ng-template>
   </ngb-tab>
   <ngb-tab disabled="true">

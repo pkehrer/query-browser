@@ -1,38 +1,21 @@
 
 
-:host /deep/ .tab-content, 
-:host /deep/ .tab-pane, 
+// Cascading elements from the app-editor down to the codemirror window,
+// making everything display: flex and flex: 1
+app-editor,
+ngb-tabset,
+.tab-content,
+.tab-pane.active,
 ngx-codemirror,
-:host,
-ngb-tabset {
-  flex: 1 1 auto;
+.CodeMirror {
   display: flex;
   flex-direction: column;
-}
-
-:host /deep/ .CodeMirror {
-  border: 1.5px solid gray;
-  border-radius: 5px;
-  width:100%;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
   height: auto;
 }
 
-:host /deep/ .CodeMirror-scroll {
-  flex: 1 1 auto;
-}
-
-.codemirror-wrapper {
-  flex: 1 1 auto;
-  background-color: lightblue;
-}
-
-:host /deep/ .nav {
-  flex: 0 0 auto;
-}
-:host /deep/ .nav-link.disabled {
+// The last tab is a fake tab, and we disable it, but we still want to be able to click on it.
+.nav-link.disabled {
   pointer-events: all;
 }
 

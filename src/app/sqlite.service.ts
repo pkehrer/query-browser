@@ -4,9 +4,7 @@ import { Location } from '@angular/common'
 import { HttpClient } from '@angular/common/http'
 import { SqlService } from './sql-service';
 import * as _ from 'lodash'
-
-declare const SQL: any
-declare const JSZip: any
+import * as initSqlJs from 'sql.js'
 
 const DB_URL = '/assets/sqlcourse.db'
 
@@ -43,22 +41,14 @@ export class SqliteService extends SqlService {
 
   private async doInitialize(): Promise<any> {
     try {
-      console.time('download zip')
-      const url = this.location.prepareExternalUrl(DB_URL + ".zip")
-      const arraybuff = await this.httpClient.get(url, { responseType: 'arraybuffer', headers: { 'Cache-Control': 'no-cache' } })
+      const SQL = await initSqlJs({ locateFile: (file) => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/${file}` })
+      const url = this.location.prepareExternalUrl(DB_URL)
+      const arraybuff = await this.httpClient
+        .get(url, { responseType: 'arraybuffer', headers: { 'Cache-Control': 'max-age=30' } })
         .toPromise()
-      console.timeEnd('download zip')
-
-
-      console.time('extract zip')
-      const zip = await JSZip.loadAsync(arraybuff)
-      const dbfile = await zip.file('sqlcourse.db').async("uint8array")
-      console.timeEnd('extract zip')
-      console.time('load db')
-      this.db = new SQL.Database(dbfile)
-      console.timeEnd('load db')
+      this.db = new SQL.Database(new Uint8Array(arraybuff))
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 

@@ -15,7 +15,9 @@ export class ResultComponent implements OnInit {
   rowData: any[]
   colDefs: ColDef[]
   gridOptions: GridOptions = {
-    enableColResize: true
+    defaultColDef: {
+      resizable: true
+    }
   }
   rowCount: number
   missingRows: number

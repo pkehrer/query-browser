@@ -18,14 +18,7 @@
   align-items: stretch;
 }
 
-app-schema {
-  overflow: auto;
-}
 
-app-schema, .spacer {
-  width: 300px;
-  flex: 0 0 auto;
-}
 
 .editor {
   display: flex;
@@ -74,4 +67,27 @@ app-spinner {
   right: 0;
   padding: 0px 10px;
   font-size: 12px;
+}
+
+.main {
+  display: flex;
+  flex: 1 1 auto;
+  align-self: stretch;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+app-schema {
+  overflow-y: auto;
+  flex: 1 1 0px;
+}
+
+.schema-wrapper {
+  display: flex;
+  flex-direction: column;;
+}
+
+app-schema, .spacer {
+  width: 300px;
+  overflow: auto;
 }

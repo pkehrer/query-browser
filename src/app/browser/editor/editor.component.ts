@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import * as _ from 'lodash'
 import { NgbTabChangeEvent, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,7 +12,8 @@ export interface EditorData {
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.scss']
+  styleUrls: ['./editor.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EditorComponent implements OnInit {
 
@@ -26,7 +27,7 @@ export class EditorComponent implements OnInit {
 
   codemirrorOptions = {
     lineNumbers: true,
-    theme: 'solarized',
+    theme: 'material',
     mode: 'sql',
     viewportMargin: Infinity
   }
@@ -37,7 +38,7 @@ export class EditorComponent implements OnInit {
     if (parsed) {
       this.data = parsed
     } else {
-      this.data = [{ title: 'untitled-1', text: '' }]
+      this.data = [{ title: 'untitled-1', text: '\n\n\n\n' }]
     }
     this.activeTabId = this.data[0].title
     this.saveData()
