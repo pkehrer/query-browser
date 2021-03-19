@@ -3,6 +3,13 @@
 @import '~codemirror/theme/solarized';
 @import '~codemirror/theme/material';
 
+:root {
+  --primary-color: #011837;
+  --secondary-color: #f68207;
+  --default-color: white;
+  --muted-color: grey;
+}
+
 body {
   height: 100vh;
 }
@@ -23,6 +30,10 @@ div.ag-root .ag-cell-focus {
     background-color: #b9d8d7 !important;
 }
 
+.ag-body-viewport {
+    overflow-y: scroll !important;
+}  
+
 .row-number-col {
   color: gray;
 }
@@ -38,7 +49,8 @@ div.ag-root .ag-cell-focus {
 }
 
 .nav-link.active {
-  background-color: #dcfbf9 !important;
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
   font-style:normal;
   font-weight: bold;
   border-left: 1.5px solid gray !important;

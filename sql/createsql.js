@@ -6,7 +6,7 @@ const _ = require('lodash'),
   { deleteIfExists, isNotANumber, loadCsv } = require('./util')
 
 const INSERT_BATCH_SIZE = 10000
-const CSV_DIR = path.join(__dirname, 'csvs')
+const CSV_DIR = path.join(__dirname, 'csvs', 'andrew')
 const SQL_DIR = path.join(__dirname, 'dist_sql')
 const DB_PATH = path.join(__dirname, 'sqlcourse.db')
 

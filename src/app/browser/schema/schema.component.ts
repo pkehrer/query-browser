@@ -15,7 +15,6 @@ export interface TableDefinition {
   name: string
   rowCount: number
   columns: ColumnDefinition[]
-
   isCollapsed: boolean
 }
 
@@ -51,7 +50,7 @@ export class SchemaComponent implements OnInit {
     this.schema = await Bluebird.map(tableNames, async (tableName: string) => {
       const columns = await this.loadTableColumns(tableName)
       const rowCount = await this.loadTableRowCount(tableName)
-      return { name: tableName, columns, rowCount, isCollapsed: true }
+      return { name: tableName, columns, rowCount, isCollapsed: false }
     })
   }
 

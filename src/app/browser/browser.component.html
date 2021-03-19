@@ -1,7 +1,5 @@
 <div class="heading">
-  <img src="https://datamovesme.com/wp-content/uploads/2018/06/cropped-logo-2.png">
-  <h3 *ngIf="dbType === 'sqlite'">SQLite Browser</h3>
-  <h3 *ngIf="dbType === 'mysql'" style="color:rgb(68, 121, 161)">MySql Browser</h3>
+  <img src="assets/datascienceinfinity.jpeg">
 </div>
 
 <div class="main">
@@ -9,9 +7,8 @@
     <app-schema *ngIf="dbType" [type]="dbType"></app-schema>
   </div>
 
-  <as-split direction="vertical">
-    <as-split-area size="40" class="top-panel">
-
+  <as-split unit="percent" direction="vertical" gutterSize="1">
+    <as-split-area size="50" minSize="50" class="top-panel">
       <div class="editor">
         <app-editor (queryChanged)="onQueryChanged($event)"></app-editor>
         <div class="buttons">
@@ -22,11 +19,11 @@
             </ul>
           </ng-template>
           <ng-template #popTitle><strong>Hotkeys:</strong></ng-template>
-          <button type="button" class="btn btn-outline-secondary" placement="bottom" [ngbPopover]="popContent"
+          <button type="button" class="btn btn-outline-secondary" placement="left" [ngbPopover]="popContent"
             [popoverTitle]="popTitle">
             Help
           </button>
-          <button class="btn btn-info" title="CTRL + ENTER" [disabled]="running || !sqlReady"
+          <button class="btn btn-primary" title="CTRL + ENTER" [disabled]="running || !sqlReady"
             (click)="runSelected()">Run
             Selection</button>
           <button class="btn btn-primary" title="SHIFT + ENTER" [disabled]="running || !sqlReady"
@@ -34,9 +31,8 @@
           <app-spinner *ngIf="running"></app-spinner>
         </div>
       </div>
-      <div class="spacer"></div>
     </as-split-area>
-    <as-split-area size="60">
+    <as-split-area size="50" minSize="30" maxSize="80">
       <div class="container">
         <div class="alert alert-danger" *ngIf="error">{{error}}</div>
       </div>

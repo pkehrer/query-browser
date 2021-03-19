@@ -1,4 +1,7 @@
 :host {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-top: 15px;
 }
 
 ag-grid-angular {
@@ -9,16 +12,13 @@ ag-grid-angular {
 
 .info {
   flex: 0 0 auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 8px;
-    border-left: 2px solid #B9D8D6;
-    border-top: 2px solid #B9D8D6;
-    border-right: 2px solid #B9D8D6;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 3px 3px 3px 15px;
-    font-size: 13px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 8px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 3px 3px 3px 15px;
+  font-size: 13px;
 }
 
 .grid {

@@ -15,6 +15,8 @@ export class ResultComponent implements OnInit {
   rowData: any[]
   colDefs: ColDef[]
   gridOptions: GridOptions = {
+    alwaysShowHorizontalScroll: true,
+    alwaysShowVerticalScroll: true,
     defaultColDef: {
       resizable: true
     }

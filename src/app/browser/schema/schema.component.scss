@@ -1,10 +1,11 @@
 :host {
   font-size: 12px;
   margin-left: 10px;
+  color: var(--primary-color);
 }
 
 .table-section {
-  border: 1px solid #B9D8D6;
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
   margin-bottom: 3px;
   padding-left: 10px;
@@ -21,5 +22,5 @@
 
 .column-type {
   font-style: italic;
-  color: gray;
+  color: var(--muted-color);
 }
