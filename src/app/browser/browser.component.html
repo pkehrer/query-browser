@@ -8,7 +8,7 @@
   </div>
 
   <as-split unit="percent" direction="vertical" gutterSize="1">
-    <as-split-area size="50" minSize="50" class="top-panel">
+    <as-split-area size="50" minSize="20" class="top-panel">
       <div class="editor">
         <app-editor (queryChanged)="onQueryChanged($event)"></app-editor>
         <div class="buttons">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </as-split-area>
-    <as-split-area size="50" minSize="30" maxSize="80">
+    <as-split-area size="50" minSize="20">
       <div class="container">
         <div class="alert alert-danger" *ngIf="error">{{error}}</div>
       </div>
