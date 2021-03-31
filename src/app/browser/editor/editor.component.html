@@ -1,4 +1,4 @@
-<ngb-tabset *ngIf="data" (tabChange)="onTabChange($event)" [activeId]="activeTabId">
+<!--<ngb-tabset *ngIf="data" (tabChange)="onTabChange($event)" [activeId]="activeTabId">
   <ngb-tab *ngFor="let d of data" [id]="d.title">
     <ng-template ngbTabTitle>
       <span class="edit-button" (click)="editTitle(d, modalContent)" *ngIf="activeTabId === d.title">&#9998;</span>
@@ -13,7 +13,10 @@
   <ngb-tab disabled="true">
     <ng-template ngbTabTitle><a class="plus-link" (click)="addTab()">+</a></ng-template>
   </ngb-tab>
-</ngb-tabset>
+</ngb-tabset>-->
+
+<ngx-codemirror [ngModel]="data[0].text" (ngModelChange)="textChange(data[0], $event)" [options]="codemirrorOptions">
+</ngx-codemirror>
 
 <ng-template #modalContent let-modal>
   <div class="modal-header">

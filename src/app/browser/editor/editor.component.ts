@@ -27,7 +27,7 @@ export class EditorComponent implements OnInit {
 
   codemirrorOptions = {
     lineNumbers: true,
-    theme: 'ayu-mirage',
+    theme: 'default',
     mode: 'sql',
     viewportMargin: Infinity
   }

@@ -18,7 +18,8 @@ export class ResultComponent implements OnInit {
     alwaysShowHorizontalScroll: true,
     alwaysShowVerticalScroll: true,
     defaultColDef: {
-      resizable: true
+      resizable: true,
+      sortable: true
     }
   }
   rowCount: number

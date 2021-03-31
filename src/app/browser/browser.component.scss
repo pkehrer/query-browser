@@ -20,12 +20,13 @@
 .editor {
   display: flex;
   flex: 1 1 auto;
-  margin: 0 80px;
+  margin: 0 80px 0 15px;
   padding: 0 5px;
   min-width: 500px;
   flex-direction: column;
   overflow: auto;
 }
+
 
 .buttons {
   display: flex;
@@ -81,7 +82,8 @@ app-schema {
 
 .schema-wrapper {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
+  margin-top: -57px;
 }
 
 app-schema {
@@ -92,13 +94,13 @@ app-schema {
 
 as-split {
   ::ng-deep .as-split-gutter {
-    background-color: var(--primary-color) !important;
+    background-color: var(--default-color) !important;
     position: relative;
   }
 
   ::ng-deep .as-split-gutter-icon {
     background-image: none !important;
-    background-color: black;
+    background-color: var(--default-color);
     transition: opacity 0.3s;
     opacity: 0;
     position: absolute;
@@ -106,7 +108,7 @@ as-split {
 
   ::ng-deep .as-split-gutter.as-dragged .as-split-gutter-icon,
   ::ng-deep .as-split-gutter-icon:hover {
-    opacity: 0.05;
+    opacity: 0.2;
   }
 
   ::ng-deep .as-split-gutter-icon {
