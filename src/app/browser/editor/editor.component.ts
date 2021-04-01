@@ -38,7 +38,10 @@ export class EditorComponent implements OnInit {
     if (parsed) {
       this.data = parsed
     } else {
-      this.data = [{ title: 'untitled-1', text: '\n\n\n\n' }]
+      this.data = [{
+        title: 'untitled-1',
+        text: `/* Write SQL Code here! */\n\nSELECT * FROM customer_details LIMIT 10\n\n`
+      }]
     }
     this.activeTabId = this.data[0].title
     this.saveData()

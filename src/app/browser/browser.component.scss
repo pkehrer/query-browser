@@ -92,6 +92,12 @@ app-schema {
   padding: 20px 20px 0 10px;
 }
 
+.results-hint {
+  margin: 20px;
+  color: var(--default-color);
+  font-style: italic;
+}
+
 as-split {
   ::ng-deep .as-split-gutter {
     background-color: var(--default-color) !important;

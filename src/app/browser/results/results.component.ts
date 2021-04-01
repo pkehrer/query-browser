@@ -13,6 +13,7 @@ export class ResultsComponent implements OnInit {
   message: string
 
   @Input() set results(results: DBResult) {
+    console.log("Got results: " + JSON.stringify(results))
     this._results = results
 
     if (_.get(this._results, 'rowSets') && this._results.rowSets.length === 0) {
