@@ -1,61 +1,61 @@
 {
-  "name": "query-browser",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pkehrer/query-browser.git"
-  },
-  "version": "0.0.0",
-  "scripts": {
-    "make-db": "node sql/createsql",
-    "make-asset-dir": "mkdirp dist/query-browser/assets && mkdirp src/assets",
-    "zip-db": "cd sql && bestzip sqlcourse.db.zip sqlcourse.db && cd ..",
-    "copy-db-dist": "ncp sql/sqlcourse.db.zip dist/query-browser/assets/sqlcourse.db.zip && ncp sql/sqlcourse.db dist/query-browser/assets/sqlcourse.db",
-    "copy-db-src": "ncp sql/sqlcourse.db.zip src/assets/sqlcourse.db.zip && ncp sql/sqlcourse.db src/assets/sqlcourse.db",
-    "copy-db": "run-p copy-db-dist copy-db-src",
-    "db": "run-s make-db make-asset-dir zip-db copy-db",
-    "deploy": "ng deploy"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "~11.2.4",
-    "@angular/common": "~11.2.4",
-    "@angular/compiler": "~11.2.4",
-    "@angular/core": "~11.2.4",
-    "@angular/forms": "~11.2.4",
-    "@angular/platform-browser": "~11.2.4",
-    "@angular/platform-browser-dynamic": "~11.2.4",
-    "@angular/router": "~11.2.4",
-    "@ctrl/ngx-codemirror": "^1.3.10",
-    "@ng-bootstrap/ng-bootstrap": "^4.0.1",
-    "ag-grid-angular": "^25.1.0",
-    "ag-grid-community": "^25.1.0",
-    "angular-split": "^5.0.0",
-    "bootstrap": "^4.6.0",
-    "codemirror": "^5.59.4",
-    "rxjs": "~6.6.0",
-    "sql.js": "^1.4.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.3",
-    "@angular/cli": "~11.2.3",
-    "@angular/compiler-cli": "~11.2.4",
-    "@types/node": "^12.11.1",
-    "angular-cli-ghpages": "^1.0.0-rc.1",
-    "bestzip": "^2.1.7",
-    "codelyzer": "^6.0.0",
-    "csvtojson": "^2.0.10",
-    "ncp": "^2.0.0",
-    "npm-run-all": "^4.1.5",
-    "sqlite3": "^5.0.2",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.1.5"
-  },
-  "browser": {
-    "fs": false,
-    "crypto": false,
-    "path": false
-  }
+	"name": "query-browser",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pkehrer/query-browser.git"
+	},
+	"version": "0.0.0",
+	"scripts": {
+		"make-db": "node sql/createsql",
+		"make-asset-dir": "mkdirp dist/query-browser/assets && mkdirp src/assets",
+		"zip-db": "cd sql && bestzip sqlcourse.db.zip sqlcourse.db && cd ..",
+		"copy-db-dist": "ncp sql/sqlcourse.db.zip dist/query-browser/assets/sqlcourse.db.zip && ncp sql/sqlcourse.db dist/query-browser/assets/sqlcourse.db",
+		"copy-db-src": "ncp sql/sqlcourse.db.zip src/assets/sqlcourse.db.zip && ncp sql/sqlcourse.db src/assets/sqlcourse.db",
+		"copy-db": "run-p copy-db-dist copy-db-src",
+		"db": "run-s make-db make-asset-dir zip-db copy-db",
+		"deploy": "ng deploy"
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "~11.2.4",
+		"@angular/common": "~11.2.4",
+		"@angular/compiler": "~11.2.4",
+		"@angular/core": "~11.2.4",
+		"@angular/forms": "~11.2.4",
+		"@angular/platform-browser": "~11.2.4",
+		"@angular/platform-browser-dynamic": "~11.2.4",
+		"@angular/router": "~11.2.4",
+		"@ctrl/ngx-codemirror": "^1.3.10",
+		"@ng-bootstrap/ng-bootstrap": "^4.0.1",
+		"ag-grid-angular": "^25.1.0",
+		"ag-grid-community": "^25.1.0",
+		"angular-split": "^5.0.0",
+		"bootstrap": "^4.6.0",
+		"codemirror": "^5.59.4",
+		"rxjs": "~6.6.0",
+		"sql.js": "^1.4.0",
+		"tslib": "^2.0.0",
+		"zone.js": "~0.11.3"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "~0.1102.3",
+		"@angular/cli": "~11.2.3",
+		"@angular/compiler-cli": "~11.2.4",
+		"@types/node": "^12.11.1",
+		"angular-cli-ghpages": "^1.0.0-rc.1",
+		"bestzip": "^2.1.7",
+		"codelyzer": "^6.0.0",
+		"csvtojson": "^2.0.10",
+		"ncp": "^2.0.0",
+		"npm-run-all": "^4.1.5",
+		"sqlite3": "^5.0.2",
+		"ts-node": "~8.3.0",
+		"tslint": "~6.1.0",
+		"typescript": "~4.1.5"
+	},
+	"browser": {
+		"fs": false,
+		"crypto": false,
+		"path": false
+	}
 }
