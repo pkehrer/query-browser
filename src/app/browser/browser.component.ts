@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BrowserComponent implements OnInit {
 
 	appName: string
+	approvedAppNames = ['data-science-infinity']
 
 	constructor(
 		private sqlite: SqliteService,
@@ -22,6 +23,9 @@ export class BrowserComponent implements OnInit {
 		private router: Router) {
 		this.activatedRoute.paramMap.subscribe(p => {
 			this.appName = p.get('appName')
+			if (!this.approvedAppNames.includes(this.appName)) {
+				this.router.navigate(['/'])
+			}
 		})
 	}
 
