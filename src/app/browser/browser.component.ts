@@ -3,7 +3,7 @@ import { DBResult } from '../types/dbResult'
 import { SqliteService } from '../sqlite.service'
 import * as _ from 'lodash'
 import { HostListener } from '@angular/core'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class BrowserComponent implements OnInit {
 	constructor(
 		private sqlite: SqliteService,
 		private changeDetector: ChangeDetectorRef,
-		private activatedRoute: ActivatedRoute) {
+		private activatedRoute: ActivatedRoute,
+		private router: Router) {
 		this.activatedRoute.paramMap.subscribe(p => {
 			this.appName = p.get('appName')
 		})
