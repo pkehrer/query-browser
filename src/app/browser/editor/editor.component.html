@@ -1,17 +1,2 @@
 <ngx-codemirror [ngModel]="data[0].text" (ngModelChange)="textChange(data[0], $event)" [options]="codemirrorOptions">
 </ngx-codemirror>
-
-<ng-template #modalContent let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title" id="modal-basic-title">Edit Tab Title</h4>
-		<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-	<div class="modal-body">
-		<input class="form-control" type="text" [(ngModel)]="editingTitle" />
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark" (click)="modal.close(editingTitle)">Save</button>
-	</div>
-</ng-template>
