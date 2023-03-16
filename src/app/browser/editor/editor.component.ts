@@ -6,7 +6,7 @@ export interface EditorData {
 	text: string
 }
 
-const BASE_DEFAULT_QUERY = '`/* Write SQL Code here! */\n\nSELECT * FROM customer_details LIMIT 10\n\n`'
+const BASE_DEFAULT_QUERY = `/* Write SQL Code here! */\n\nSELECT * FROM customer_details LIMIT 10\n\n`
 
 @Component({
 	selector: 'app-editor',
@@ -16,7 +16,8 @@ const BASE_DEFAULT_QUERY = '`/* Write SQL Code here! */\n\nSELECT * FROM custome
 })
 export class EditorComponent implements OnInit {
 
-	constructor(private route: ActivatedRoute) { }
+	constructor(
+		private route: ActivatedRoute) { }
 
 	@Output() queryChanged = new EventEmitter<string>()
 	data: EditorData[]
@@ -58,7 +59,7 @@ export class EditorComponent implements OnInit {
 			if (parsed.length === 0) {
 				throw new Error()
 			}
-			if (!_.every(parsed, (p: any) => 'title' in p && 'text' in p)) {
+			if (!_.every(parsed, (p: any) => 'text' in p)) {
 				throw new Error()
 			}
 			return parsed
@@ -75,7 +76,6 @@ export class EditorComponent implements OnInit {
 		this.route.queryParamMap.subscribe(map => {
 			this.queryKey = (map.get('query_key') || 'default') + '-query-key'
 			this.defaultQuery = map.get('default_query') || BASE_DEFAULT_QUERY
-			console.log(this.queryKey)
 			this.loadData()
 		})
 	}
@@ -84,5 +84,30 @@ export class EditorComponent implements OnInit {
 		this.queryChanged.next(text)
 		data.text = text
 		this.saveData()
+	}
+
+	exportQuery(): void {
+		const file = new Blob([this.data[0].text], { type: 'text/plain' })
+		const link = document.createElement('a')
+		link.href = URL.createObjectURL(file)
+		link.download = `${this.queryKey}_${new Date().toJSON().slice(0, 10)}.sql`
+		link.click()
+		link.remove()
+	}
+
+	importQuery(): void {
+		const input = document.createElement('input') as HTMLInputElement
+		input.accept = '.sql'
+		input.type = 'file'
+		input.onchange = (event: any) => {
+			const file: File = event.target.files[0]
+			file.text().then(content => {
+				this.data[0].text = content
+				this.saveData()
+			})
+
+		}
+
+		input.click()
 	}
 }

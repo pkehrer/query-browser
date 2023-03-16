@@ -18,27 +18,27 @@ import { EditorComponent } from './browser/editor/editor.component';
 import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BrowserComponent,
-    ResultsComponent,
-    SchemaComponent,
-    SpinnerComponent,
-    ResultComponent,
-    EditorComponent,
-    TestComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    AngularSplitModule,
-    NgbModule,
-    CodemirrorModule,
-    AgGridModule.withComponents([])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		BrowserComponent,
+		ResultsComponent,
+		SchemaComponent,
+		SpinnerComponent,
+		ResultComponent,
+		EditorComponent,
+		TestComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		FormsModule,
+		AngularSplitModule,
+		NgbModule,
+		CodemirrorModule,
+		AgGridModule.withComponents([])
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

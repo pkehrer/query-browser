@@ -15,18 +15,13 @@ export class BrowserComponent implements OnInit {
 
 	appName: string
 	approvedAppNames = ['data-science-infinity']
+	private queryKey: string
 
 	constructor(
 		private sqlite: SqliteService,
 		private changeDetector: ChangeDetectorRef,
 		private activatedRoute: ActivatedRoute,
 		private router: Router) {
-		this.activatedRoute.paramMap.subscribe(p => {
-			this.appName = p.get('appName')
-			if (!this.approvedAppNames.includes(this.appName)) {
-				this.router.navigate(['/'])
-			}
-		})
 	}
 
 
@@ -37,7 +32,17 @@ export class BrowserComponent implements OnInit {
 	sqlReady = false
 
 	ngOnInit() {
-		this.sqlite.initialize().then(() => this.sqlReady = true)
+		this.activatedRoute.paramMap.subscribe(p => {
+			this.appName = p.get('appName')
+			if (!this.approvedAppNames.includes(this.appName)) {
+				this.router.navigate(['/'])
+			}
+			this.activatedRoute.queryParamMap.subscribe(qp => {
+				console.log(qp.get('query_key'))
+				this.queryKey = qp.get('query_key') || 'query-browser'
+				this.sqlite.initialize().then(() => this.sqlReady = true)
+			})
+		})
 	}
 
 	onQueryChanged(query: string) {

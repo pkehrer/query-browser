@@ -1,5 +1,3 @@
-
-
 // Cascading elements from the app-editor down to the codemirror window,
 // making everything display: flex and flex: 1
 app-editor,
@@ -8,44 +6,56 @@ ngb-tabset,
 .tab-pane.active,
 ngx-codemirror,
 .CodeMirror {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: auto;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: auto;
 }
 
 // The last tab is a fake tab, and we disable it, but we still want to be able to click on it.
 .nav-link.disabled {
-  pointer-events: all;
+	pointer-events: all;
 }
 
 .nav-tabs {
-  margin-bottom: -3px;
+	margin-bottom: -3px;
 }
 
 .plus-link {
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 10px;
-    background-color: #54c554;
-    padding: 0px 6px 4px 6px;
-    color: white !important;
-    border-radius: 15px;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 10px;
+	background-color: #54c554;
+	padding: 0px 6px 4px 6px;
+	color: white !important;
+	border-radius: 15px;
 }
 
 .edit-button {
-  font-family: consolas;
-  margin-right: 10px;
+	font-family: consolas;
+	margin-right: 10px;
 }
 
 .close-button {
-  font-weight: bold;
-  font-style:normal;
-  margin-left: 8px;
-  color: white;
-    margin-left: 8px;
-    background-color: #bdb4b4;
-    padding: 0px 7px 4px;
-    border-radius: 18px;
-    vertical-align: top;
+	font-weight: bold;
+	font-style: normal;
+	margin-left: 8px;
+	color: white;
+	margin-left: 8px;
+	background-color: #bdb4b4;
+	padding: 0px 7px 4px;
+	border-radius: 18px;
+	vertical-align: top;
+}
+
+
+.buttons {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.buttons button {
+	margin-left: 10px;
 }

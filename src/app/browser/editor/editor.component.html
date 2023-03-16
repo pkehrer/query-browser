@@ -1,2 +1,8 @@
+<div class="buttons">
+	<button class="btn btn-sm btn-secondary" title="Save the current query window to a file"
+		(click)="exportQuery()">Save</button>
+	<button class="btn btn-sm btn-secondary" title="Load a local file to the current query window"
+		(click)="importQuery()">Load</button>
+</div>
 <ngx-codemirror [ngModel]="data[0].text" (ngModelChange)="textChange(data[0], $event)" [options]="codemirrorOptions">
 </ngx-codemirror>
